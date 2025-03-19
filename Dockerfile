@@ -1,20 +1,35 @@
-# Use official Node.js image as the base image
-FROM node:16
+# Use the official .NET SDK image for building the application
+FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 
-# Set the working directory inside the container
+# Set the working directory
 WORKDIR /app
 
-# Copy package.json and package-lock.json into the container
-COPY package*.json ./
+# Set the environment variable to use a custom NuGet package directory
+ENV NUGET_PACKAGES=/root/.nuget/packages
 
-# Install dependencies
-RUN npm install
+# Copy the project file and restore dependencies
+COPY *.csproj ./
+RUN dotnet restore
 
-# Copy the rest of the application code into the container
-COPY . .
+# Copy the rest of the application code
+COPY . ./
 
-# Expose the port the app will run on
-EXPOSE 3000
+# Publish the application
+RUN dotnet publish -c Release -o /app/publish
+# Use the official .NET runtime image for running the application
+FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS runtime
 
-# Command to start the app
-CMD ["npm", "start"]
+# Set the working directory
+WORKDIR /app
+
+# Copy the build output
+COPY --from=build /app/publish .
+
+# Set environment variable for ASP.NET Core URLs
+ENV ASPNETCORE_URLS=http://+:8080
+ENTRYPOINT ["dotnet", "server.dll"]
+# Expose port 8080
+EXPOSE 8080
+EXPOSE 80
+EXPOSE 443
+# Run the application
