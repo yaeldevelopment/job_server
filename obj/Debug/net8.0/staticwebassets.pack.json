@@ -1,0 +1,41 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\user1\\Desktop\\שנה ב\\job\\server\\server\\wwwroot\\assets\\resumes\\y0552222091.pdf",
+      "PackagePath": "staticwebassets\\assets\\resumes\\y0552222091.pdf"
+    },
+    {
+      "Id": "C:\\Users\\user1\\Desktop\\שנה ב\\job\\server\\server\\wwwroot\\assets\\resumes\\y0553322091.pdf",
+      "PackagePath": "staticwebassets\\assets\\resumes\\y0553322091.pdf"
+    },
+    {
+      "Id": "C:\\Users\\user1\\Desktop\\שנה ב\\job\\server\\server\\wwwroot\\assets\\resumes\\y0556720091.pdf",
+      "PackagePath": "staticwebassets\\assets\\resumes\\y0556720091.pdf"
+    },
+    {
+      "Id": "C:\\Users\\user1\\Desktop\\שנה ב\\job\\server\\server\\wwwroot\\assets\\resumes\\y0556722091.pdf",
+      "PackagePath": "staticwebassets\\assets\\resumes\\y0556722091.pdf"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.server.props",
+      "PackagePath": "build\\server.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.server.props",
+      "PackagePath": "buildMultiTargeting\\server.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.server.props",
+      "PackagePath": "buildTransitive\\server.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.server.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.server.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

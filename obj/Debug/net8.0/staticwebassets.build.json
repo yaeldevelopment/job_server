@@ -1,0 +1,434 @@
+{
+  "Version": 1,
+  "Hash": "qo1LhveoBvL43DuFG4JEZJG9S2EnnpgJgFBqLipdBKU=",
+  "Source": "server",
+  "BasePath": "_content/server",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "server\\wwwroot",
+      "Source": "server",
+      "ContentRoot": "C:\\Users\\user1\\Desktop\\שנה ב\\job\\server\\server\\wwwroot\\",
+      "BasePath": "_content/server",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\user1\\Desktop\\שנה ב\\job\\server\\server\\wwwroot\\assets\\resumes\\y0552222091.pdf",
+      "SourceId": "server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\user1\\Desktop\\שנה ב\\job\\server\\server\\wwwroot\\",
+      "BasePath": "_content/server",
+      "RelativePath": "assets/resumes/y0552222091#[.{fingerprint}]?.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "2ob8jok5eb",
+      "Integrity": "7j9FhlU97gzCSCQpBaVj+/IhxJnIlx+n4gbpBFuhpzU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\resumes\\y0552222091.pdf"
+    },
+    {
+      "Identity": "C:\\Users\\user1\\Desktop\\שנה ב\\job\\server\\server\\wwwroot\\assets\\resumes\\y0553322091.pdf",
+      "SourceId": "server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\user1\\Desktop\\שנה ב\\job\\server\\server\\wwwroot\\",
+      "BasePath": "_content/server",
+      "RelativePath": "assets/resumes/y0553322091#[.{fingerprint}]?.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "8jg3kbkz5f",
+      "Integrity": "jOn2RXAEllXZnZsagXF7tiIbXYUe9qq+e6FJAGoIYCA=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\resumes\\y0553322091.pdf"
+    },
+    {
+      "Identity": "C:\\Users\\user1\\Desktop\\שנה ב\\job\\server\\server\\wwwroot\\assets\\resumes\\y0556720091.pdf",
+      "SourceId": "server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\user1\\Desktop\\שנה ב\\job\\server\\server\\wwwroot\\",
+      "BasePath": "_content/server",
+      "RelativePath": "assets/resumes/y0556720091#[.{fingerprint}]?.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ka7vpwub1z",
+      "Integrity": "rA+ZofLbq+hlwUWJ3DBizCXRI9WHOGhWBuV2kQf873k=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\resumes\\y0556720091.pdf"
+    },
+    {
+      "Identity": "C:\\Users\\user1\\Desktop\\שנה ב\\job\\server\\server\\wwwroot\\assets\\resumes\\y0556722091.pdf",
+      "SourceId": "server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\user1\\Desktop\\שנה ב\\job\\server\\server\\wwwroot\\",
+      "BasePath": "_content/server",
+      "RelativePath": "assets/resumes/y0556722091#[.{fingerprint}]?.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ka7vpwub1z",
+      "Integrity": "rA+ZofLbq+hlwUWJ3DBizCXRI9WHOGhWBuV2kQf873k=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\resumes\\y0556722091.pdf"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "assets/resumes/y0552222091.2ob8jok5eb.pdf",
+      "AssetFile": "C:\\Users\\user1\\Desktop\\שנה ב\\job\\server\\server\\wwwroot\\assets\\resumes\\y0552222091.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1071818"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"7j9FhlU97gzCSCQpBaVj+/IhxJnIlx+n4gbpBFuhpzU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 11 Mar 2025 14:35:28 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "2ob8jok5eb"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/resumes/y0552222091.pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-7j9FhlU97gzCSCQpBaVj+/IhxJnIlx+n4gbpBFuhpzU="
+        }
+      ]
+    },
+    {
+      "Route": "assets/resumes/y0552222091.pdf",
+      "AssetFile": "C:\\Users\\user1\\Desktop\\שנה ב\\job\\server\\server\\wwwroot\\assets\\resumes\\y0552222091.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1071818"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"7j9FhlU97gzCSCQpBaVj+/IhxJnIlx+n4gbpBFuhpzU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 11 Mar 2025 14:35:28 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-7j9FhlU97gzCSCQpBaVj+/IhxJnIlx+n4gbpBFuhpzU="
+        }
+      ]
+    },
+    {
+      "Route": "assets/resumes/y0553322091.8jg3kbkz5f.pdf",
+      "AssetFile": "C:\\Users\\user1\\Desktop\\שנה ב\\job\\server\\server\\wwwroot\\assets\\resumes\\y0553322091.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "723630"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"jOn2RXAEllXZnZsagXF7tiIbXYUe9qq+e6FJAGoIYCA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 11 Mar 2025 14:45:27 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "8jg3kbkz5f"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/resumes/y0553322091.pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-jOn2RXAEllXZnZsagXF7tiIbXYUe9qq+e6FJAGoIYCA="
+        }
+      ]
+    },
+    {
+      "Route": "assets/resumes/y0553322091.pdf",
+      "AssetFile": "C:\\Users\\user1\\Desktop\\שנה ב\\job\\server\\server\\wwwroot\\assets\\resumes\\y0553322091.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "723630"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"jOn2RXAEllXZnZsagXF7tiIbXYUe9qq+e6FJAGoIYCA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 11 Mar 2025 14:45:27 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-jOn2RXAEllXZnZsagXF7tiIbXYUe9qq+e6FJAGoIYCA="
+        }
+      ]
+    },
+    {
+      "Route": "assets/resumes/y0556720091.ka7vpwub1z.pdf",
+      "AssetFile": "C:\\Users\\user1\\Desktop\\שנה ב\\job\\server\\server\\wwwroot\\assets\\resumes\\y0556720091.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "136828"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"rA+ZofLbq+hlwUWJ3DBizCXRI9WHOGhWBuV2kQf873k=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 18 Mar 2025 10:49:58 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ka7vpwub1z"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/resumes/y0556720091.pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-rA+ZofLbq+hlwUWJ3DBizCXRI9WHOGhWBuV2kQf873k="
+        }
+      ]
+    },
+    {
+      "Route": "assets/resumes/y0556720091.pdf",
+      "AssetFile": "C:\\Users\\user1\\Desktop\\שנה ב\\job\\server\\server\\wwwroot\\assets\\resumes\\y0556720091.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "136828"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"rA+ZofLbq+hlwUWJ3DBizCXRI9WHOGhWBuV2kQf873k=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 18 Mar 2025 10:49:58 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-rA+ZofLbq+hlwUWJ3DBizCXRI9WHOGhWBuV2kQf873k="
+        }
+      ]
+    },
+    {
+      "Route": "assets/resumes/y0556722091.ka7vpwub1z.pdf",
+      "AssetFile": "C:\\Users\\user1\\Desktop\\שנה ב\\job\\server\\server\\wwwroot\\assets\\resumes\\y0556722091.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "136828"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"rA+ZofLbq+hlwUWJ3DBizCXRI9WHOGhWBuV2kQf873k=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 18 Mar 2025 13:17:56 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ka7vpwub1z"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/resumes/y0556722091.pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-rA+ZofLbq+hlwUWJ3DBizCXRI9WHOGhWBuV2kQf873k="
+        }
+      ]
+    },
+    {
+      "Route": "assets/resumes/y0556722091.pdf",
+      "AssetFile": "C:\\Users\\user1\\Desktop\\שנה ב\\job\\server\\server\\wwwroot\\assets\\resumes\\y0556722091.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "136828"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"rA+ZofLbq+hlwUWJ3DBizCXRI9WHOGhWBuV2kQf873k=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 18 Mar 2025 13:17:56 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-rA+ZofLbq+hlwUWJ3DBizCXRI9WHOGhWBuV2kQf873k="
+        }
+      ]
+    }
+  ]
+}
