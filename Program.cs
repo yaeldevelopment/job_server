@@ -25,16 +25,12 @@ builder.Services.AddSwaggerGen(c =>
 var app = builder.Build();
 
 // ✅ Middleware - Swagger
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
+app.UseSwagger();
     app.UseSwaggerUI(c =>
     {
         c.SwaggerEndpoint("/swagger/v1/swagger.json", "API v1");
         c.RoutePrefix = "swagger"; // אפשר לשנות את הנתיב אם צריך
     });
-}
-
 // ✅ Middleware - קבצים סטטיים + CORS
 
 
