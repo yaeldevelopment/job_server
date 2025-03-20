@@ -45,7 +45,7 @@ app.UseStaticFiles(new StaticFileOptions
     ,
     OnPrepareResponse = ctx =>
     {
-        ctx.Context.Response.Headers.Append("Access-Control-Allow-Origin", "http://localhost:4200");
+        ctx.Context.Response.Headers.Append("Access-Control-Allow-Origin", "https://job-yael.onrender.com");
     }
 });
 app.UseCors("AllowAll");
