@@ -53,7 +53,7 @@ public class CloudinaryController : ControllerBase
             return Ok(new
             {
                 message,
-                url = uploadResult.SecureUrl.ToString()
+                path = uploadResult.SecureUrl.ToString()
             });
         }
         else
