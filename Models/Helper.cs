@@ -39,13 +39,19 @@ namespace server.Models
                     // הוספת קובץ מצורף אם קיים
                     if (url != null)
                     {
+                        // מוסיפים fl_attachment כדי להוריד את הקובץ
+                        string downloadUrl = $"{url}?fl_attachment&version={DateTime.UtcNow.Ticks}";
+
                         using (WebClient client = new WebClient())
                         {
-                            byte[] fileBytes = client.DownloadData(url);
-                            Attachment attachment = new Attachment(new MemoryStream(fileBytes), "resume.pdf");
+                            byte[] fileBytes = client.DownloadData(downloadUrl);
+                            var fileName = Path.GetFileName(new Uri(url).AbsolutePath); // מקבל את שם הקובץ
+
+                            Attachment attachment = new Attachment(new MemoryStream(fileBytes), fileName);
                             message.Attachments.Add(attachment);
                         }
                     }
+
 
 
                     await smtp.SendMailAsync(message);
