@@ -11,12 +11,12 @@ namespace server.Controllers
     [Route("api/[controller]")]
     public class JobsController : Controller
     {
-        private readonly IWebHostEnvironment _env;
+   
         private readonly MongoDBManager<Jobs> _managQuery;
-        public JobsController(IConfiguration configuration, IWebHostEnvironment env)
+        public JobsController(IConfiguration configuration)
         {
             _managQuery = new MongoDBManager<Jobs>(configuration, "jobs");
-            _env = env; 
+       
         }
 
 
@@ -127,7 +127,7 @@ namespace server.Controllers
                 </body>
                 </html>";
 
-                await Helper.SendEmailAsync(formData.mail, "פניית מועמד", body,_env, formData.employee.resume);
+                await Helper.SendEmailAsync(formData.mail, "פניית מועמד", body, formData.employee.resume);
                 formData.job.employees_send.Add(formData.employee.Id);
                 await _managQuery.UpdateFieldAsync_ById(formData.job.Id, "employees_send", formData.job.employees_send);
                 body = $@"

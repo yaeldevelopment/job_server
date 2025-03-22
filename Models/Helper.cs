@@ -9,7 +9,7 @@ namespace server.Models
     {
   
 
-        public static async Task SendEmailAsync(string toEmail, string subject, string body, IWebHostEnvironment? env=null, string? url = null)
+        public static async Task SendEmailAsync(string toEmail, string subject, string body, string? url = null)
         {
             try
             {
@@ -32,23 +32,21 @@ namespace server.Models
                     message.Subject = subject;
                     message.Body = body;
                     message.IsBodyHtml = true;
-                    if (env!=null)
+
+
+
+
+                    // הוספת קובץ מצורף אם קיים
+                    if (url != null)
                     {
-                        Uri uri = new Uri(url);
-                        string relativePath = uri.AbsolutePath.TrimStart('/');
-
-
-                        string filePath = Path.Combine(env.WebRootPath, relativePath);
-
-
-
-                        // הוספת קובץ מצורף אם קיים
-                        if (!string.IsNullOrEmpty(filePath) && System.IO.File.Exists(filePath))
+                        using (WebClient client = new WebClient())
                         {
-                            message.Attachments.Add(new Attachment(filePath));
+                            byte[] fileBytes = client.DownloadData(url);
+                            Attachment attachment = new Attachment(new MemoryStream(fileBytes), "resume.pdf");
+                            message.Attachments.Add(attachment);
                         }
                     }
-                   
+
 
                     await smtp.SendMailAsync(message);
                     Console.WriteLine("✅ המייל נשלח בהצלחה!");
