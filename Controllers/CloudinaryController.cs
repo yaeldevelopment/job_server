@@ -31,8 +31,12 @@ public class CloudinaryController : ControllerBase
         if (string.IsNullOrEmpty(email))
             return BadRequest("אימייל חסר.");
 
-        var safeEmailName = email.Split('@')[0]; // Use part before @
-        var publicId = $"resumes/{safeEmailName}"; // Save in 'resumes' folder
+        var safeEmailName = email.Split('@')[0];
+        var publicId = $"resumes/{safeEmailName}";
+
+        // בדיקה אם קיים קובץ קיים
+        var getResourceResult = _cloudinary.GetResource(new GetResourceParams(publicId));
+        bool exists = getResourceResult.StatusCode == System.Net.HttpStatusCode.OK;
 
         var uploadParams = new RawUploadParams
         {
@@ -41,14 +45,14 @@ public class CloudinaryController : ControllerBase
             Overwrite = true
         };
 
-
         var uploadResult = await _cloudinary.UploadAsync(uploadParams);
 
         if (uploadResult.StatusCode == System.Net.HttpStatusCode.OK)
         {
+            var message = exists ? "✅ קובץ עודכן בהצלחה!" : "✅ קובץ חדש נשמר בהצלחה!";
             return Ok(new
             {
-                message = "✅ קובץ נשמר ב-Cloudinary בהצלחה!",
+                message,
                 url = uploadResult.SecureUrl.ToString()
             });
         }
