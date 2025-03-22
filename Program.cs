@@ -10,6 +10,7 @@ builder.Services.AddCors(options =>
         policy =>
         {
             policy.WithOrigins("https://job-yael.onrender.com")
+       
                   .AllowAnyMethod()
                   .AllowAnyHeader()
                   .AllowCredentials();

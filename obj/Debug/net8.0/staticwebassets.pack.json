@@ -1,6 +1,10 @@
 {
   "Files": [
     {
+      "Id": "C:\\Users\\user1\\Desktop\\שנה ב\\job\\server\\server\\wwwroot\\assets\\resumes\\tripyaeleden.pdf",
+      "PackagePath": "staticwebassets\\assets\\resumes\\tripyaeleden.pdf"
+    },
+    {
       "Id": "C:\\Users\\user1\\Desktop\\שנה ב\\job\\server\\server\\wwwroot\\assets\\resumes\\y0552222091.pdf",
       "PackagePath": "staticwebassets\\assets\\resumes\\y0552222091.pdf"
     },

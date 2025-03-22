@@ -1,5 +1,17 @@
 ﻿<Project>
   <ItemGroup>
+    <StaticWebAssetEndpoint Include="_content/server/assets/resumes/tripyaeleden.ka7vpwub1z.pdf">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\resumes\tripyaeleden.pdf'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"ka7vpwub1z"},{"Name":"integrity","Value":"sha256-rA\u002BZofLbq\u002BhlwUWJ3DBizCXRI9WHOGhWBuV2kQf873k="},{"Name":"label","Value":"_content/server/assets/resumes/tripyaeleden.pdf"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"136828"},{"Name":"Content-Type","Value":"application/pdf"},{"Name":"ETag","Value":"\u0022rA\u002BZofLbq\u002BhlwUWJ3DBizCXRI9WHOGhWBuV2kQf873k=\u0022"},{"Name":"Last-Modified","Value":"Thu, 20 Mar 2025 18:40:18 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/server/assets/resumes/tripyaeleden.pdf">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\resumes\tripyaeleden.pdf'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-rA\u002BZofLbq\u002BhlwUWJ3DBizCXRI9WHOGhWBuV2kQf873k="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"136828"},{"Name":"Content-Type","Value":"application/pdf"},{"Name":"ETag","Value":"\u0022rA\u002BZofLbq\u002BhlwUWJ3DBizCXRI9WHOGhWBuV2kQf873k=\u0022"},{"Name":"Last-Modified","Value":"Thu, 20 Mar 2025 18:40:18 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/server/assets/resumes/y0552222091.2ob8jok5eb.pdf">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\resumes\y0552222091.pdf'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>

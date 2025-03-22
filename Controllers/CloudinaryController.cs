@@ -1,82 +1,75 @@
-﻿using System;
+﻿using CloudinaryDotNet;
+using CloudinaryDotNet.Actions;
+using Microsoft.AspNetCore.Mvc;
 using System.Security.Cryptography;
 using System.Text;
-using Microsoft.AspNetCore.Mvc;
-using static WebApplication14.Controllers.employeesController;
 
 [Route("api/cloudinary")]
 [ApiController]
 public class CloudinaryController : ControllerBase
 {
-    private readonly string cloudName;
-    private readonly string apiKey;
+    private readonly Cloudinary _cloudinary;
     private readonly string apiSecret;
 
     public CloudinaryController()
     {
-        cloudName = Environment.GetEnvironmentVariable("CloudName") ?? throw new ArgumentNullException("CloudName is missing");
-        apiKey = Environment.GetEnvironmentVariable("ApiKey") ?? throw new ArgumentNullException("ApiKey is missing");
+        var cloudName = Environment.GetEnvironmentVariable("CloudName") ?? throw new ArgumentNullException("CloudName is missing");
+        var apiKey = Environment.GetEnvironmentVariable("ApiKey") ?? throw new ArgumentNullException("ApiKey is missing");
         apiSecret = Environment.GetEnvironmentVariable("ApiSecret") ?? throw new ArgumentNullException("ApiSecret is missing");
+
+        Account account = new Account(cloudName, apiKey, apiSecret);
+        _cloudinary = new Cloudinary(account);
+        this.apiSecret = apiSecret;
     }
+
     [HttpPost("upload")]
-    public async Task<IActionResult> UploadFile(IFormFile file, [FromQuery] string email)
+    public async Task<IActionResult> UploadToCloudinary(IFormFile file, [FromQuery] string email)
     {
         if (file == null || file.Length == 0)
-        {
             return BadRequest("קובץ לא תקין.");
-        }
 
         if (string.IsNullOrEmpty(email))
-        {
             return BadRequest("אימייל חסר.");
-        }
 
-        var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/assets/resumes");
-        if (!Directory.Exists(uploadsFolder))
+        var safeEmailName = email.Split('@')[0]; // Use part before @
+        var publicId = $"resumes/{safeEmailName}"; // Save in 'resumes' folder
+
+        var uploadParams = new RawUploadParams
         {
-            Directory.CreateDirectory(uploadsFolder);
+            File = new FileDescription(file.FileName, file.OpenReadStream()),
+            PublicId = publicId,
+            Overwrite = true
+        };
 
-        }
 
-        // יצירת שם קובץ חדש לפי המייל
-        var fileExtension = Path.GetExtension(file.FileName);
-        var safeEmailName = email.Split('@')[0]; // שימוש רק בשם לפני ה-@
-        var fileName = $"{safeEmailName}{fileExtension}";
+        var uploadResult = await _cloudinary.UploadAsync(uploadParams);
 
-        var filePath = Path.Combine(uploadsFolder, fileName);
-
-        // שמירה עם החלפת קובץ קיים
-        using (var stream = new FileStream(filePath, FileMode.Create, FileAccess.Write))
+        if (uploadResult.StatusCode == System.Net.HttpStatusCode.OK)
         {
-            await file.CopyToAsync(stream);
-
+            return Ok(new
+            {
+                message = "✅ קובץ נשמר ב-Cloudinary בהצלחה!",
+                url = uploadResult.SecureUrl.ToString()
+            });
         }
-
-        var fileUrl = $"assets/resumes/{fileName}";
-
-        return Ok(new { message = "✅ קובץ נשמר בהצלחה!", path = fileUrl });
+        else
+        {
+            return StatusCode((int)uploadResult.StatusCode, new { error = "העלאה נכשלה" });
+        }
     }
 
     [HttpPost("generate-signature")]
     public IActionResult GenerateSignature([FromBody] SignatureRequest request)
     {
         if (string.IsNullOrEmpty(request.Folder))
-        {
             return BadRequest(new { error = "Folder parameter is required" });
-        }
 
         var timestamp = DateTimeOffset.UtcNow.ToUnixTimeSeconds().ToString();
         string stringToSign = $"folder={request.Folder}&timestamp={timestamp}";
 
-        // ✨ בדיקה לפני החתימה
-        Console.WriteLine($"🔹 String to sign: {stringToSign}");
-        Console.WriteLine($"🔹 ApiSecret: {apiSecret}");
-
         string signature = GenerateSHA1Signature(stringToSign, apiSecret);
 
-        Console.WriteLine($"🔹 Signature generated: {signature}");
-
-        return Ok(new { timestamp, signature, apiKey, cloudName, stringToSign });
+        return Ok(new { timestamp, signature });
     }
 
     private static string GenerateSHA1Signature(string data, string key)
@@ -87,8 +80,6 @@ public class CloudinaryController : ControllerBase
             return BitConverter.ToString(hashBytes).Replace("-", "").ToLower();
         }
     }
-
- 
 }
 
 public class SignatureRequest

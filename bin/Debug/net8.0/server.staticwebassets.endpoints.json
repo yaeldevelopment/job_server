@@ -3,6 +3,88 @@
   "ManifestType": "Build",
   "Endpoints": [
     {
+      "Route": "assets/resumes/tripyaeleden.ka7vpwub1z.pdf",
+      "AssetFile": "assets/resumes/tripyaeleden.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "136828"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"rA+ZofLbq+hlwUWJ3DBizCXRI9WHOGhWBuV2kQf873k=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 20 Mar 2025 18:40:18 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ka7vpwub1z"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-rA+ZofLbq+hlwUWJ3DBizCXRI9WHOGhWBuV2kQf873k="
+        },
+        {
+          "Name": "label",
+          "Value": "assets/resumes/tripyaeleden.pdf"
+        }
+      ]
+    },
+    {
+      "Route": "assets/resumes/tripyaeleden.pdf",
+      "AssetFile": "assets/resumes/tripyaeleden.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "136828"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"rA+ZofLbq+hlwUWJ3DBizCXRI9WHOGhWBuV2kQf873k=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 20 Mar 2025 18:40:18 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-rA+ZofLbq+hlwUWJ3DBizCXRI9WHOGhWBuV2kQf873k="
+        }
+      ]
+    },
+    {
       "Route": "assets/resumes/y0552222091.2ob8jok5eb.pdf",
       "AssetFile": "assets/resumes/y0552222091.pdf",
       "Selectors": [],

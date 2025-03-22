@@ -17,7 +17,7 @@
   },
   {
     "ContainingType": "CloudinaryController",
-    "Method": "UploadFile",
+    "Method": "UploadToCloudinary",
     "RelativePath": "api/cloudinary/upload",
     "HttpMethod": "POST",
     "IsController": true,

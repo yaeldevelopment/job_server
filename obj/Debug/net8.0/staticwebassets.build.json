@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "qo1LhveoBvL43DuFG4JEZJG9S2EnnpgJgFBqLipdBKU=",
+  "Hash": "MOJdNioxDVHAaEfpzqKXvpOSkGOpTeMRSZb2vscjwzw=",
   "Source": "server",
   "BasePath": "_content/server",
   "Mode": "Default",
@@ -16,6 +16,27 @@
     }
   ],
   "Assets": [
+    {
+      "Identity": "C:\\Users\\user1\\Desktop\\שנה ב\\job\\server\\server\\wwwroot\\assets\\resumes\\tripyaeleden.pdf",
+      "SourceId": "server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\user1\\Desktop\\שנה ב\\job\\server\\server\\wwwroot\\",
+      "BasePath": "_content/server",
+      "RelativePath": "assets/resumes/tripyaeleden#[.{fingerprint}]?.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ka7vpwub1z",
+      "Integrity": "rA+ZofLbq+hlwUWJ3DBizCXRI9WHOGhWBuV2kQf873k=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\resumes\\tripyaeleden.pdf"
+    },
     {
       "Identity": "C:\\Users\\user1\\Desktop\\שנה ב\\job\\server\\server\\wwwroot\\assets\\resumes\\y0552222091.pdf",
       "SourceId": "server",
@@ -102,6 +123,88 @@
     }
   ],
   "Endpoints": [
+    {
+      "Route": "assets/resumes/tripyaeleden.ka7vpwub1z.pdf",
+      "AssetFile": "C:\\Users\\user1\\Desktop\\שנה ב\\job\\server\\server\\wwwroot\\assets\\resumes\\tripyaeleden.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "136828"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"rA+ZofLbq+hlwUWJ3DBizCXRI9WHOGhWBuV2kQf873k=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 20 Mar 2025 18:40:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ka7vpwub1z"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/resumes/tripyaeleden.pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-rA+ZofLbq+hlwUWJ3DBizCXRI9WHOGhWBuV2kQf873k="
+        }
+      ]
+    },
+    {
+      "Route": "assets/resumes/tripyaeleden.pdf",
+      "AssetFile": "C:\\Users\\user1\\Desktop\\שנה ב\\job\\server\\server\\wwwroot\\assets\\resumes\\tripyaeleden.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "136828"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"rA+ZofLbq+hlwUWJ3DBizCXRI9WHOGhWBuV2kQf873k=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 20 Mar 2025 18:40:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-rA+ZofLbq+hlwUWJ3DBizCXRI9WHOGhWBuV2kQf873k="
+        }
+      ]
+    },
     {
       "Route": "assets/resumes/y0552222091.2ob8jok5eb.pdf",
       "AssetFile": "C:\\Users\\user1\\Desktop\\שנה ב\\job\\server\\server\\wwwroot\\assets\\resumes\\y0552222091.pdf",

@@ -1,3 +1,4 @@
+wwwroot\assets\resumes\tripyaeleden.pdf
 wwwroot\assets\resumes\y0552222091.pdf
 wwwroot\assets\resumes\y0553322091.pdf
 wwwroot\assets\resumes\y0556720091.pdf
