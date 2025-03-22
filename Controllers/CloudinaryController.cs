@@ -1,8 +1,11 @@
-﻿using CloudinaryDotNet;
+﻿using Amazon.Runtime.Internal;
+using CloudinaryDotNet;
 using CloudinaryDotNet.Actions;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Cryptography;
 using System.Text;
+using WebApplication14.Models;
+using WebApplication14;
 
 [Route("api/cloudinary")]
 [ApiController]
@@ -10,9 +13,12 @@ public class CloudinaryController : ControllerBase
 {
     private readonly Cloudinary _cloudinary;
     private readonly string apiSecret;
+    private readonly MongoDBManager<employees> _managQuery;
 
-    public CloudinaryController()
-    {
+
+    public CloudinaryController(IConfiguration configuration)
+    {    _managQuery = new MongoDBManager<employees>(configuration, "employees");
+
         var cloudName = Environment.GetEnvironmentVariable("CloudName") ?? throw new ArgumentNullException("CloudName is missing");
         var apiKey = Environment.GetEnvironmentVariable("ApiKey") ?? throw new ArgumentNullException("ApiKey is missing");
         apiSecret = Environment.GetEnvironmentVariable("ApiSecret") ?? throw new ArgumentNullException("ApiSecret is missing");
@@ -49,6 +55,17 @@ public class CloudinaryController : ControllerBase
 
         if (uploadResult.StatusCode == System.Net.HttpStatusCode.OK)
         {
+            var user = await _managQuery.QueryBymailOnlyAsync(email);
+            if (user == null)
+            {
+                return NotFound("משתמש לא נמצא.");
+            }
+            else
+            {
+   
+                    await _managQuery.UpdateFieldAsync_ById(user.Id, "resume", uploadResult.SecureUrl.ToString()); 
+            }
+            uploadResult.SecureUrl.ToString();
             var message = exists ? "✅ קובץ עודכן בהצלחה!" : "✅ קובץ חדש נשמר בהצלחה!";
             return Ok(new
             {
