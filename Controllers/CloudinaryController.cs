@@ -56,15 +56,12 @@ public class CloudinaryController : ControllerBase
         if (uploadResult.StatusCode == System.Net.HttpStatusCode.OK)
         {
             var user = await _managQuery.QueryBymailOnlyAsync(email);
-            if (user == null)
-            {
-                return NotFound("משתמש לא נמצא.");
+            if (user != null)
+            { 
+                await _managQuery.UpdateFieldAsync_ById(user.Id, "resume", uploadResult.SecureUrl.ToString()); 
+              
             }
-            else
-            {
-   
-                    await _managQuery.UpdateFieldAsync_ById(user.Id, "resume", uploadResult.SecureUrl.ToString()); 
-            }
+            
             uploadResult.SecureUrl.ToString();
             var message = exists ? "✅ קובץ עודכן בהצלחה!" : "✅ קובץ חדש נשמר בהצלחה!";
             return Ok(new
