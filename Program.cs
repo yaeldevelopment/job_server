@@ -9,7 +9,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowAll",
         policy =>
         {
-            policy.WithOrigins("https://job-yael.onrender.com")
+            policy.WithOrigins("https://job-yael.onrender.com", "http://localhost:4200")
        
                   .AllowAnyMethod()
                   .AllowAnyHeader()
@@ -42,6 +42,7 @@ app.UseStaticFiles(new StaticFileOptions
     ,
     OnPrepareResponse = ctx =>
     {
+        ctx.Context.Response.Headers.Append("Access-Control-Allow-Origin","http://localhost:4200");
         ctx.Context.Response.Headers.Append("Access-Control-Allow-Origin", "https://job-yael.onrender.com");
     }
 });
