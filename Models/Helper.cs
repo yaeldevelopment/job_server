@@ -7,34 +7,41 @@ using System.Text;
 using Org.BouncyCastle.Crypto;
 using Org.BouncyCastle.Crypto.Paddings;
 using Org.BouncyCastle.Crypto.Engines;
+using System.Security.Cryptography;
 
 namespace server.Models
 {
     public  class Helper
     {
-        public static string Decrypt(string encryptedBase64, string secretKey)
+        public static string Decrypt(string encryptedBase64, string key)
         {
-            byte[] encryptedBytes = Convert.FromBase64String(encryptedBase64);
-            byte[] keyBytes = Encoding.UTF8.GetBytes(secretKey);
+            // המרת ה־Base64 בחזרה לבייטים
+            byte[] cipherBytes = Convert.FromBase64String(encryptedBase64);
+            byte[] keyBytes = Encoding.UTF8.GetBytes(key);  // המפתח
+            byte[] ivBytes = new byte[16]; // יצירת IV ריק בגודל 16 (לפי AES)
 
-            // דואגים שהמפתח יהיה באורך תקני - 16/24/32 בייטים
-            keyBytes = ResizeKey(keyBytes, 32); // AES-256
+            // חשוב מאוד לשים לב לאורך המפתח ולהתאים אותו
+            if (keyBytes.Length != 32) // AES-256 מצריך מפתח באורך 32 בתים
+            {
+                throw new Exception("The key must be 32 bytes long for AES-256 encryption.");
+            }
 
-            // הגדרת מנוע ההצפנה עם Padding
-            BufferedBlockCipher cipher = new PaddedBufferedBlockCipher(new AesEngine());
-            cipher.Init(false, new Org.BouncyCastle.Crypto.Parameters.KeyParameter(keyBytes));
+            using (Aes aesAlg = Aes.Create())
+            {
+                aesAlg.Key = keyBytes;
+                aesAlg.IV = ivBytes;  // השתמש ב-IV ריק
+                aesAlg.Mode = CipherMode.CBC;
+                aesAlg.Padding = PaddingMode.PKCS7;
 
-
-            byte[] output = cipher.DoFinal(encryptedBytes);
-
-            return Encoding.UTF8.GetString(output);
-        }
-
-        private static byte[] ResizeKey(byte[] key, int size)
-        {
-            byte[] resized = new byte[size];
-            Array.Copy(key, resized, Math.Min(key.Length, size));
-            return resized;
+                using (ICryptoTransform decryptor = aesAlg.CreateDecryptor(aesAlg.Key, aesAlg.IV))
+                using (MemoryStream msDecrypt = new MemoryStream(cipherBytes))
+                using (CryptoStream csDecrypt = new CryptoStream(msDecrypt, decryptor, CryptoStreamMode.Read))
+                using (StreamReader srDecrypt = new StreamReader(csDecrypt))
+                {
+                    // קרא את הטקסט המפוענח
+                    return srDecrypt.ReadToEnd();
+                }
+            }
         }
 
         public static async Task SendEmailAsync(string toEmail, string subject, string body, string? url = null)
