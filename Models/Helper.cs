@@ -18,7 +18,7 @@ namespace server.Models
             // המרת ה־Base64 בחזרה לבייטים
             byte[] cipherBytes = Convert.FromBase64String(encryptedBase64);
             byte[] keyBytes = Encoding.UTF8.GetBytes(key);  // המפתח
-            byte[] ivBytes = new byte[16]; // יצירת IV ריק בגודל 16 (לפי AES)
+            byte[] ivBytes = Encoding.UTF8.GetBytes("1234567890123456");  // אותו IV ששולח הלקוח
 
             // חשוב מאוד לשים לב לאורך המפתח ולהתאים אותו
             if (keyBytes.Length != 32) // AES-256 מצריך מפתח באורך 32 בתים
@@ -29,7 +29,7 @@ namespace server.Models
             using (Aes aesAlg = Aes.Create())
             {
                 aesAlg.Key = keyBytes;
-                aesAlg.IV = ivBytes;  // השתמש ב-IV ריק
+                aesAlg.IV = ivBytes;  // השתמש ב-IV אותו הלקוח השתמש
                 aesAlg.Mode = CipherMode.CBC;
                 aesAlg.Padding = PaddingMode.PKCS7;
 
