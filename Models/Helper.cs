@@ -2,12 +2,40 @@
 using System.Net;
 using SharpCompress.Common;
 using MongoDB.Driver;
+using SharpCompress.Crypto;
+using System.Text;
+using Org.BouncyCastle.Crypto;
+using Org.BouncyCastle.Crypto.Paddings;
+using Org.BouncyCastle.Crypto.Engines;
 
 namespace server.Models
 {
     public  class Helper
     {
-  
+        public static string Decrypt(string encryptedBase64, string secretKey)
+        {
+            byte[] encryptedBytes = Convert.FromBase64String(encryptedBase64);
+            byte[] keyBytes = Encoding.UTF8.GetBytes(secretKey);
+
+            // דואגים שהמפתח יהיה באורך תקני - 16/24/32 בייטים
+            keyBytes = ResizeKey(keyBytes, 32); // AES-256
+
+            // הגדרת מנוע ההצפנה עם Padding
+            BufferedBlockCipher cipher = new PaddedBufferedBlockCipher(new AesEngine());
+            cipher.Init(false, new Org.BouncyCastle.Crypto.Parameters.KeyParameter(keyBytes));
+
+
+            byte[] output = cipher.DoFinal(encryptedBytes);
+
+            return Encoding.UTF8.GetString(output);
+        }
+
+        private static byte[] ResizeKey(byte[] key, int size)
+        {
+            byte[] resized = new byte[size];
+            Array.Copy(key, resized, Math.Min(key.Length, size));
+            return resized;
+        }
 
         public static async Task SendEmailAsync(string toEmail, string subject, string body, string? url = null)
         {
@@ -64,6 +92,7 @@ namespace server.Models
             }
         }
     }
+
 
 }
 

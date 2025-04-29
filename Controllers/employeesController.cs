@@ -144,7 +144,9 @@ namespace WebApplication14.Controllers
                 }
 
 
-               
+                string key  =Environment.GetEnvironmentVariable("SecretKey");
+                 request.Password = Helper.Decrypt(request.Password, key);
+      
                 string body = $@"
 <html>
 <head>
